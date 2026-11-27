@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cristian Morales | Full Stack Developer</title>
+<meta name="description" content="Portafolio de Cristian Morales, desarrollador Full Stack: APIs en .NET e interfaces en React.">
+<script>
+// Aplica el tema antes de pintar para evitar parpadeos
+(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}
+if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+document.documentElement.dataset.theme=t})();
+</script>
+<link rel="icon" href="assets/sonrisa.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top"><img src="assets/sonrisa.png" width="28" height="28" alt="">Cristian Morales</a>
+    <nav>
+      <a href="#skills" data-i18n="nav.skills">Habilidades</a>
+      <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+      <a href="#about" data-i18n="nav.about">Sobre mí</a>
+      <a href="#contact" data-i18n="nav.contact">Contacto</a>
+    </nav>
+    <div class="controls"><button id="lang" type="button">EN</button><button id="theme" type="button"><span aria-hidden="true">☾</span></button></div>
+  </div>
+</header>
+<main id="top">
+
+<section class="hero wrap">
+  <p class="eyebrow">Full Stack Developer</p>
+  <h1><span data-i18n="hero.hi">Hola, soy</span> <span class="grad">Cristian.</span></h1>
+  <p class="lead" data-i18n="hero.title">Del botón en React a la base de datos.</p>
+  <p class="actions"><a class="btn" href="#projects" data-i18n="hero.projects">Ver proyectos</a><a class="more" href="#contact" data-i18n="nav.hire">Contrátame</a></p>
+  <div class="stage"><img src="assets/hola.png" width="420" height="420" alt="Memoji de Cristian saludando" data-i18n-alt="alt.hola"></div>
+</section>
+
+<section class="showcase">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="show.eyebrow">Proyecto destacado</p>
+    <h2>Firmeza.</h2>
+    <p class="lead" data-i18n="p.firmeza">Ventas e inventario con tienda para clientes: catálogo, carrito, control de existencias y comprobantes por correo. Incluye pruebas y Docker.</p>
+    <p class="actions"><a class="btn" href="https://github.com/ChrisOnfroy/FirmezaProyecto.Backend">Backend</a><a class="more" href="https://github.com/ChrisOnfroy/FirmezaProyecto.Frontend">Frontend</a></p>
+    <div class="flow"><span>React 19</span><i></i><span>API .NET 10</span><i></i><span>PostgreSQL</span></div>
+    <ul class="tags"><li>.NET 10</li><li>React 19</li><li>TypeScript</li><li>Tailwind CSS</li><li>PostgreSQL</li><li>Docker</li></ul>
+    <img class="peek" src="assets/laptop.png" width="420" height="420" alt="Memoji de Cristian programando en un portátil" data-i18n-alt="alt.laptop">
+  </div>
+</section>
+
+<section id="skills" class="wrap block">
+  <h2 class="title" data-i18n="skills.title">Lo que sé hacer.</h2>
+  <div class="bento">
+    <div class="tile wide"><p class="kicker">Backend</p><h3 data-i18n="skills.back">APIs claras y bien estructuradas.</h3><p class="muted">C#, ASP.NET Core, EF Core, LINQ, JWT, xUnit</p></div>
+    <div class="tile art"><div><p class="kicker" data-i18n="skills.how">Cómo trabajo</p><h3>Clean Architecture + SOLID.</h3></div><img src="assets/idea.png" width="420" height="420" alt="Memoji de Cristian con una idea" data-i18n-alt="alt.idea" loading="lazy"></div>
+    <div class="tile"><p class="kicker">Frontend</p><h3 data-i18n="skills.front">Interfaces que se entienden.</h3><p class="muted">React, TypeScript, JavaScript, Vite, Tailwind CSS, HTML, CSS</p></div>
+    <div class="tile"><p class="kicker" data-i18n="toolbox.more">Datos y nube</p><h3 data-i18n="skills.data">De los datos al despliegue.</h3><p class="muted">PostgreSQL, MySQL, Docker, GitHub Actions, Azure, Linux</p></div>
+    <div class="tile art"><div><p class="kicker" data-i18n="skills.now">Ahora</p><h3 data-i18n="skills.learn">Aprendiendo Azure, pruebas y CI/CD.</h3></div><img src="assets/sonrisa.png" width="420" height="420" alt="Memoji de Cristian sonriendo" data-i18n-alt="alt.sonrisa" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="projects" class="band">
+  <div class="wrap">
+    <h2 class="title" data-i18n="projects.title2">Lo que he construido.</h2>
+    <p class="hint" data-i18n="filter.hint">Elige una tecnología para ver dónde la usé.</p>
+    <div class="filters"><button type="button" data-filter="all" aria-pressed="true" data-i18n="filter.all">Todos</button><button type="button" data-filter="react" aria-pressed="false">React</button><button type="button" data-filter="dotnet" aria-pressed="false">.NET</button><button type="button" data-filter="postgres" aria-pressed="false">PostgreSQL</button><button type="button" data-filter="docker" aria-pressed="false">Docker</button><button type="button" data-filter="azure" aria-pressed="false">Azure</button><button type="button" data-filter="python" aria-pressed="false">Python</button></div>
+    <p id="count" class="sr" role="status"></p>
+    <div class="grid">
+<article class="tile project" data-tech="react dotnet postgres docker"><div class="flow" aria-hidden="true"><span>React</span><i></i><span>API .NET</span><i></i><span>PostgreSQL</span></div><h3>Firmeza</h3><p data-i18n="p.firmeza">Ventas e inventario con tienda para clientes: catálogo, carrito, control de existencias y comprobantes por correo. Incluye pruebas y Docker.</p><ul class="tags"><li>.NET 10</li><li>React 19</li><li>TypeScript</li><li>Tailwind CSS</li><li>PostgreSQL</li><li>Docker</li></ul><p class="links"><a href="https://github.com/ChrisOnfroy/FirmezaProyecto.Backend">Backend</a><a href="https://github.com/ChrisOnfroy/FirmezaProyecto.Frontend">Frontend</a></p></article>
+<article class="tile project" data-tech="react dotnet postgres docker"><h3>SkillHub</h3><p data-i18n="p.skillhub">Inscripciones a talleres presenciales: control de cupos, cruces de horario, inscripción masiva desde Excel y certificados en PDF.</p><ul class="tags"><li>.NET 10</li><li>React</li><li>TypeScript</li><li>DDD</li><li>PostgreSQL</li><li>Docker</li></ul><p class="links"><a href="https://github.com/ChrisOnfroy/skillhub.Backend">Backend</a><a href="https://github.com/ChrisOnfroy/skillhub.Frontend">Frontend</a></p></article>
+<article class="tile project" data-tech="dotnet postgres azure"><h3>Proyectandtask</h3><p data-i18n="p.tasks">API para gestionar proyectos y tareas, donde cada usuario ve solo su trabajo. Tiene pruebas unitarias y de integración, y despliegue a Azure con GitHub Actions.</p><ul class="tags"><li>.NET 10</li><li>PostgreSQL</li><li>xUnit</li><li>Azure</li></ul><p class="links"><a href="https://github.com/ChrisOnfroy/ProyectoAndTarea.Backend" data-i18n="code">Ver código</a></p></article>
+<article class="tile project" data-tech="dotnet postgres"><h3>Canchero</h3><p data-i18n="p.canchero">API para buscar canchas, administrar sedes y gestionar reservas, con roles y búsqueda por ubicación.</p><ul class="tags"><li>.NET 10</li><li>EF Core</li><li>PostgreSQL</li></ul><p class="links"><a href="https://github.com/ChrisOnfroy/Canchero.Backend" data-i18n="code">Ver código</a></p></article>
+<article class="tile project" data-tech="dotnet postgres docker azure"><h3>TaskApi</h3><p data-i18n="p.taskapi">API de tareas diseñada para Azure App Service y Azure SQL con identidad administrada.</p><ul class="tags"><li>.NET 10</li><li>Azure SQL</li><li>PostgreSQL</li><li>Docker</li></ul><p class="links"><a href="https://github.com/ChrisOnfroy/TaskApi.Backend" data-i18n="code">Ver código</a></p></article>
+<article class="tile project" data-tech="python"><h3>Emotians</h3><p data-i18n="p.emotians">Reconocimiento de expresiones faciales en tiempo real desde la cámara web. Hecho junto a Juan Benavides.</p><ul class="tags"><li>Python</li><li>PyTorch</li><li>OpenCV</li></ul><p class="links"><a href="https://github.com/ChrisOnfroy/Emotians" data-i18n="code">Ver código</a></p></article>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="wrap block about">
+  <div class="portrait"><img src="assets/gesto.png" width="420" height="427" alt="Memoji de Cristian haciendo un corazón con los dedos" data-i18n-alt="alt.gesto" loading="lazy"></div>
+  <div>
+    <h2 class="title" data-i18n="nav.about">Sobre mí</h2>
+    <p data-i18n="about.1">Soy desarrollador Full Stack y estudiante de Ingeniería de Sistemas en Unisalamanca, con especialización en Backend en Riwi. Me gusta convertir requisitos complejos en software claro y bien estructurado.</p><p data-i18n="about.2">Trabajo con Clean Architecture y principios SOLID. Ahora estoy aprendiendo sobre Azure, pruebas y CI/CD. Fuera del código, soy fan del universo cinematográfico de Marvel.</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <img src="assets/gracias.png" width="420" height="420" alt="Memoji de Cristian haciendo un corazón con las manos" data-i18n-alt="alt.gracias" loading="lazy">
+    <h2 data-i18n="contact.title">Hablemos.</h2>
+    <p class="lead" data-i18n="contact.text">¿Tienes un proyecto o una oportunidad? Escríbeme.</p>
+    <p class="actions"><a class="btn" href="mailto:cmoralesavendano6@gmail.com" data-i18n="contact.mail">Enviar correo</a><a class="more" href="https://www.linkedin.com/in/cristian-alberto-morales-avenda%C3%B1o-a902b41b1/">LinkedIn</a><a class="more" href="https://github.com/ChrisOnfroy">GitHub</a></p>
+    <p class="mail">cmoralesavendano6@gmail.com</p>
+  </div>
+</section>
+</main>
+<footer class="wrap">© 2026 Cristian Morales</footer>
+<script src="app.js"></script>
+</body>
+</html>
