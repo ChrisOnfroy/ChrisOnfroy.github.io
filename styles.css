@@ -127,3 +127,14 @@ footer{padding-block:1.5rem;color:var(--muted);font-size:.8rem}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 .recs .title{font-size:clamp(1.85rem,8.4vw,4rem)}
+
+/* Celular: el menú se reparte en filas para que no se corte ninguna opción */
+@media (max-width:36rem){
+ nav{display:grid;grid-template-columns:repeat(3,auto);justify-content:space-between;gap:0 .5rem;overflow:visible}
+ nav a{padding-block:.3rem;text-align:center}
+ html{scroll-padding-top:7.5rem}
+}
+/* Formación en una columna cuando no caben las tres tarjetas */
+@media (max-width:58rem){#education .cards{grid-template-columns:1fr}}
+/* Celular en horizontal: la barra no ocupa la pantalla al desplazarse */
+@media (max-height:30rem){.bar{position:static}html{scroll-padding-top:0}}
