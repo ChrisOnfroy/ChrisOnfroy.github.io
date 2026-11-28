@@ -163,3 +163,28 @@ nav{gap:1.1rem}
  .bar-in{padding-block:.35rem;font-size:.9rem}
  .brand{font-size:1.05rem}.brand img{width:32px;height:32px}
 }
+
+/* Formulario de recomendaciones, dentro de Inicio */
+.rec-form{display:grid;gap:1rem;max-width:34rem;margin:2rem auto 0;text-align:left}
+.rec-form label{display:grid;gap:.35rem;font-weight:600;font-size:.95rem}
+.rec-form input,.rec-form textarea{width:100%;font:400 1rem/1.4 Inter,system-ui,sans-serif;color:var(--text);background:var(--tile);border:1px solid var(--line);border-radius:.9rem;padding:.75rem 1rem}
+.rec-form textarea{resize:vertical}
+.rec-form .actions{margin-top:.5rem}
+.rec-form button{font-size:1rem;cursor:pointer}
+.rec-form .btn{border:0}
+.rec-form .plain{padding:.65rem 1.3rem}
+.rec-form .hint{text-align:center;margin:0}
+#recommendations .hint:last-child{max-width:34rem;margin-inline:auto}
+@media (max-width:36rem){nav a:nth-child(7){grid-column:2}}
+
+/* Proyecto destacado: la imagen completa cabe en la pantalla */
+.showcase{padding-top:clamp(2.5rem,6vh,4.5rem)}
+.showcase .peek{animation:none}
+@media (min-width:62rem){
+ .feature{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:3rem;align-content:center;align-items:center;max-width:80rem}
+ .feature>*{grid-column:1}
+ .feature .peek{grid-column:2;grid-row:1/span 6;align-self:end;width:auto;max-width:100%;max-height:min(32rem,calc(100vh - 11rem));margin:0 auto}
+ .feature .flow{width:100%;margin-top:2.25rem}
+ .feature .tags{margin-bottom:2.5rem}
+ .showcase h2{font-size:clamp(3.5rem,8vw,6.5rem)}
+}

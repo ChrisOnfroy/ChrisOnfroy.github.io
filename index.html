@@ -15,7 +15,7 @@ document.documentElement.dataset.theme=t})();
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 <header class="bar">
@@ -28,7 +28,6 @@ document.documentElement.dataset.theme=t})();
       <a href="#projects" data-i18n="nav.projects">Proyectos</a>
       <a href="#education" data-i18n="nav.edu">Formación</a>
       <a href="#about" data-i18n="nav.about">Sobre mí</a>
-      <a href="#recommendations" data-i18n="nav.recs">Recomendaciones</a>
       <a href="#contact" data-i18n="nav.contact">Contacto</a>
     </nav>
     <div class="controls"><button id="lang" type="button">EN</button><button id="theme" type="button"><span aria-hidden="true">☾</span></button></div>
@@ -44,8 +43,26 @@ document.documentElement.dataset.theme=t})();
   <div class="stage"><img src="assets/hola.png" width="420" height="420" alt="Memoji de Cristian saludando" data-i18n-alt="alt.hola"></div>
 </section>
 
+<section id="recommendations" data-view="top" class="wrap block recs">
+  <h2 class="title" data-i18n="rec.title">Recomendaciones.</h2>
+  <p class="lead" data-i18n="rec.lead">¿Hemos trabajado o estudiado juntos? Cuenta cómo fue la experiencia.</p>
+  <!-- Recomendaciones reales (con permiso de su autor). Copia este bloque fuera del comentario:
+  <div class="cards">
+    <figure class="tile"><blockquote>Texto de la recomendación</blockquote><figcaption><strong>Nombre</strong> · Cargo y relación contigo</figcaption></figure>
+  </div>
+  -->
+  <form id="rec-form" class="rec-form">
+    <label><span data-i18n="rec.name">Tu nombre</span><input name="name" required maxlength="80" autocomplete="name"></label>
+    <label><span data-i18n="rec.role">¿Cómo nos conocemos? (opcional)</span><input name="role" maxlength="120"></label>
+    <label><span data-i18n="rec.msg">Tu recomendación</span><textarea name="message" rows="5" required maxlength="1000"></textarea></label>
+    <p class="actions"><button class="btn" type="submit" data-i18n="rec.gmail">Continuar en Gmail</button><button class="plain" id="rec-copy" type="button" data-i18n="rec.copy">Copiar mensaje</button></p>
+    <p id="rec-status" class="hint" role="status"></p>
+  </form>
+  <p class="hint" data-i18n="rec.note">Solo publicaré tu comentario y tu nombre con tu permiso.</p>
+</section>
+
 <section class="showcase" data-view="projects">
-  <div class="wrap">
+  <div class="wrap feature">
     <p class="eyebrow" data-i18n="show.eyebrow">Proyecto destacado</p>
     <h2>Firmeza.</h2>
     <p class="lead" data-i18n="p.firmeza">Ventas e inventario con tienda para clientes: catálogo, carrito, control de existencias y comprobantes por correo. Incluye pruebas y Docker.</p>
@@ -114,18 +131,6 @@ document.documentElement.dataset.theme=t})();
   </div>
 </section>
 
-<section id="recommendations" data-view="recommendations" class="wrap block recs">
-  <h2 class="title" data-i18n="rec.title">Recomendaciones.</h2>
-  <p class="lead" data-i18n="rec.lead">¿Hemos trabajado o estudiado juntos? Cuenta cómo fue la experiencia.</p>
-  <!-- Recomendaciones reales (con permiso de su autor). Copia este bloque fuera del comentario:
-  <div class="cards">
-    <figure class="tile"><blockquote>Texto de la recomendación</blockquote><figcaption><strong>Nombre</strong> · Cargo y relación contigo</figcaption></figure>
-  </div>
-  -->
-  <p class="actions"><a class="btn" href="mailto:cmoralesavendano6@gmail.com?subject=Recomendaci%C3%B3n%20%2F%20Recommendation" data-i18n="rec.mail">Enviar recomendación</a></p>
-  <p class="hint" data-i18n="rec.note">Solo publicaré tu comentario y tu nombre con tu permiso.</p>
-</section>
-
 <section id="contact" data-view="contact" class="contact">
   <div class="wrap">
     <img src="assets/gracias.png" width="420" height="420" alt="Memoji de Cristian haciendo un corazón con las manos" data-i18n-alt="alt.gracias" loading="lazy">
@@ -137,6 +142,6 @@ document.documentElement.dataset.theme=t})();
 </section>
 </main>
 <footer class="wrap">© 2026 Cristian Morales</footer>
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>

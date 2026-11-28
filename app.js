@@ -1,4 +1,5 @@
 const en = {
+  'rec.name':'Your name','rec.role':'How do we know each other? (optional)','rec.msg':'Your recommendation','rec.gmail':'Continue in Gmail','rec.copy':'Copy message',
   'nav.edu':'Education',
   'exp.title':'Where I have worked.',
   'exp.role':'Backend Developer (College Trainee)',
@@ -25,7 +26,6 @@ const en = {
   'rec.title':'Recommendations.',
   'rec.lead':'Have we worked or studied together? Share how it went.',
   'rec.note':'I will only publish your comment and name with your permission.',
-  'rec.mail':'Send a recommendation',
   'p.classtrack':'Academic management web system that assigns classrooms and schedules, preventing overbooking and course clashes with transactional validation.',
   'about.lang':'Native Spanish · Intermediate English',
   'nav.exp':'Experience',
@@ -120,3 +120,40 @@ function showView() {
 addEventListener('hashchange', showView);
 addEventListener('load', showView);
 showView();
+
+// Recomendaciones: el sitio es estático, así que el visitante envía el mensaje desde su correo
+const recForm = document.getElementById('rec-form');
+const recStatus = document.getElementById('rec-status');
+const recEmail = 'cmoralesavendano6@gmail.com';
+function recText() {
+  const d = new FormData(recForm);
+  const get = k => String(d.get(k) || '').trim();
+  const es = lang === 'es';
+  return [(es ? 'Nombre: ' : 'Name: ') + get('name'),
+    get('role') && (es ? 'Relación: ' : 'Relationship: ') + get('role'),
+    '', get('message')].filter(x => x !== '').join('\n');
+}
+function recValid() {
+  [...recForm.elements].forEach(f => { if (f.required && !f.value.trim()) f.value = ''; });
+  return recForm.reportValidity();
+}
+recForm.addEventListener('submit', e => {
+  e.preventDefault();
+  if (!recValid()) return;
+  const q = new URLSearchParams({ view: 'cm', fs: '1', to: recEmail,
+    su: lang === 'es' ? 'Recomendación para tu portafolio' : 'Recommendation for your portfolio', body: recText() });
+  window.open('https://mail.google.com/mail/?' + q, '_blank', 'noopener,noreferrer');
+  recStatus.textContent = lang === 'es'
+    ? 'Para terminar, pulsa Enviar en Gmail. Si no usas Gmail, copia el mensaje y envíalo a ' + recEmail + '.'
+    : 'To finish, press Send in Gmail. If you do not use Gmail, copy the message and send it to ' + recEmail + '.';
+});
+document.getElementById('rec-copy').addEventListener('click', async () => {
+  if (!recValid()) return;
+  try {
+    await navigator.clipboard.writeText(recText());
+    recStatus.textContent = (lang === 'es' ? 'Mensaje copiado. Envíalo a ' : 'Message copied. Send it to ') + recEmail + '.';
+  } catch {
+    recStatus.textContent = lang === 'es' ? 'No se pudo copiar el mensaje.' : 'The message could not be copied.';
+  }
+});
+langBtn.addEventListener('click', () => { recStatus.textContent = ''; });
