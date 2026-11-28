@@ -147,3 +147,19 @@ nav a[aria-current]{opacity:1;font-weight:600;color:var(--link)}
 nav{gap:1.1rem}
 @media (max-width:36rem){nav{grid-template-columns:repeat(3,auto);gap:0 .5rem}html{scroll-padding-top:0}}
 @media (max-width:36rem){nav a:nth-child(7){grid-column:span 2}}
+
+/* Barra superior más grande y legible */
+.bar-in{max-width:86rem;padding-block:.6rem;font-size:1rem}
+.brand{font-size:1.2rem;gap:.55rem}
+.brand img{width:40px;height:40px}
+.controls button{width:2.75rem;height:2.75rem;font-size:1.05rem}
+@media (min-width:36.01rem){nav a{padding-block:.4rem}}
+@media (max-width:75rem){
+ .bar-in{flex-wrap:wrap;gap:0 .75rem}.controls{margin-left:auto}
+ nav{order:3;width:100%;margin:0;flex-wrap:wrap;justify-content:center;gap:0 1.25rem;overflow:visible}
+}
+@media (min-width:36.01rem) and (max-width:75rem){html{scroll-padding-top:0}}
+@media (max-width:36rem){
+ .bar-in{padding-block:.35rem;font-size:.9rem}
+ .brand{font-size:1.05rem}.brand img{width:32px;height:32px}
+}
