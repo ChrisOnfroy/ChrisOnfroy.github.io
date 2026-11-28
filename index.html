@@ -23,8 +23,10 @@ document.documentElement.dataset.theme=t})();
     <a class="brand" href="#top"><img src="assets/sonrisa.png" width="28" height="28" alt="">Cristian Morales</a>
     <nav>
       <a href="#skills" data-i18n="nav.skills">Habilidades</a>
+      <a href="#experience" data-i18n="nav.exp">Experiencia</a>
       <a href="#projects" data-i18n="nav.projects">Proyectos</a>
       <a href="#about" data-i18n="nav.about">Sobre mí</a>
+      <a href="#recommendations" data-i18n="nav.recs">Recomendaciones</a>
       <a href="#contact" data-i18n="nav.contact">Contacto</a>
     </nav>
     <div class="controls"><button id="lang" type="button">EN</button><button id="theme" type="button"><span aria-hidden="true">☾</span></button></div>
@@ -55,11 +57,19 @@ document.documentElement.dataset.theme=t})();
 <section id="skills" class="wrap block">
   <h2 class="title" data-i18n="skills.title">Lo que sé hacer.</h2>
   <div class="bento">
-    <div class="tile wide"><p class="kicker">Backend</p><h3 data-i18n="skills.back">APIs claras y bien estructuradas.</h3><p class="muted">C#, ASP.NET Core, EF Core, LINQ, JWT, xUnit</p></div>
+    <div class="tile wide"><p class="kicker">Backend</p><h3 data-i18n="skills.back">APIs claras y bien estructuradas.</h3><p class="muted">C#, Java, ASP.NET Core, EF Core, LINQ, JWT, Swagger / OpenAPI, xUnit</p></div>
     <div class="tile art"><div><p class="kicker" data-i18n="skills.how">Cómo trabajo</p><h3>Clean Architecture + SOLID.</h3></div><img src="assets/idea.png" width="420" height="420" alt="Memoji de Cristian con una idea" data-i18n-alt="alt.idea" loading="lazy"></div>
-    <div class="tile"><p class="kicker">Frontend</p><h3 data-i18n="skills.front">Interfaces que se entienden.</h3><p class="muted">React, TypeScript, JavaScript, Vite, Tailwind CSS, HTML, CSS</p></div>
-    <div class="tile"><p class="kicker" data-i18n="toolbox.more">Datos y nube</p><h3 data-i18n="skills.data">De los datos al despliegue.</h3><p class="muted">PostgreSQL, MySQL, Docker, GitHub Actions, Azure, Linux</p></div>
+    <div class="tile"><p class="kicker">Frontend</p><h3 data-i18n="skills.front">Interfaces que se entienden.</h3><p class="muted">React, Next.js, TypeScript, JavaScript, Vite, Tailwind CSS, Bootstrap, Jest, React Testing Library, HTML, CSS</p></div>
+    <div class="tile"><p class="kicker" data-i18n="toolbox.more">Datos y nube</p><h3 data-i18n="skills.data">De los datos al despliegue.</h3><p class="muted">PostgreSQL, MySQL, Docker, GitHub Actions, Azure, Linux, Git, Postman</p></div>
     <div class="tile art"><div><p class="kicker" data-i18n="skills.now">Ahora</p><h3 data-i18n="skills.learn">Aprendiendo Azure, pruebas y CI/CD.</h3></div><img src="assets/sonrisa.png" width="420" height="420" alt="Memoji de Cristian sonriendo" data-i18n-alt="alt.sonrisa" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="experience" class="wrap block">
+  <h2 class="title" data-i18n="exp.title">Dónde he trabajado.</h2>
+  <div class="job">
+    <div><h3 data-i18n="exp.role">Desarrollador Backend (College Trainee)</h3><p class="muted" data-i18n="exp.place">Entorno corporativo de práctica y desarrollo ágil · Barranquilla, Colombia</p><p class="date">2023 – 2025</p></div>
+    <ul><li><h4 data-i18n="x.1.t">Desarrollo de APIs REST</h4><p data-i18n="x.1">Diseñé e implementé endpoints con Java y Spring Boot, reduciendo tiempos de respuesta y desacoplando la lógica de negocio para las aplicaciones cliente.</p></li><li><h4 data-i18n="x.2.t">Bases de datos y persistencia</h4><p data-i18n="x.2">Modelé bases de datos en MySQL y construí consultas complejas, procedimientos almacenados y transacciones ACID para proteger la integridad de los datos en operaciones críticas.</p></li><li><h4 data-i18n="x.3.t">Calidad y mantenibilidad</h4><p data-i18n="x.3">Apliqué Clean Code y participé en revisiones de código en GitHub, reduciendo deuda técnica y facilitando la cobertura de pruebas.</p></li><li><h4 data-i18n="x.4.t">Trabajo ágil</h4><p data-i18n="x.4">Participé en Scrum (sprints de 2 semanas, dailies y retrospectivas), entregando incrementos funcionales a tiempo.</p></li></ul>
   </div>
 </section>
 
@@ -75,8 +85,22 @@ document.documentElement.dataset.theme=t})();
 <article class="tile project" data-tech="dotnet postgres azure"><h3>Proyectandtask</h3><p data-i18n="p.tasks">API para gestionar proyectos y tareas, donde cada usuario ve solo su trabajo. Tiene pruebas unitarias y de integración, y despliegue a Azure con GitHub Actions.</p><ul class="tags"><li>.NET 10</li><li>PostgreSQL</li><li>xUnit</li><li>Azure</li></ul><p class="links"><a href="https://github.com/ChrisOnfroy/ProyectoAndTarea.Backend" data-i18n="code">Ver código</a></p></article>
 <article class="tile project" data-tech="dotnet postgres"><h3>Canchero</h3><p data-i18n="p.canchero">API para buscar canchas, administrar sedes y gestionar reservas, con roles y búsqueda por ubicación.</p><ul class="tags"><li>.NET 10</li><li>EF Core</li><li>PostgreSQL</li></ul><p class="links"><a href="https://github.com/ChrisOnfroy/Canchero.Backend" data-i18n="code">Ver código</a></p></article>
 <article class="tile project" data-tech="dotnet postgres docker azure"><h3>TaskApi</h3><p data-i18n="p.taskapi">API de tareas diseñada para Azure App Service y Azure SQL con identidad administrada.</p><ul class="tags"><li>.NET 10</li><li>Azure SQL</li><li>PostgreSQL</li><li>Docker</li></ul><p class="links"><a href="https://github.com/ChrisOnfroy/TaskApi.Backend" data-i18n="code">Ver código</a></p></article>
+<article class="tile project" data-tech=""><h3>ClassTrack</h3><p data-i18n="p.classtrack">Sistema web de gestión académica para asignar aulas y horarios, evitando sobrecupos y cruces de asignaturas con validaciones transaccionales.</p><ul class="tags"><li>JavaScript</li><li>MySQL</li><li>Git</li></ul></article>
 <article class="tile project" data-tech="python"><h3>Emotians</h3><p data-i18n="p.emotians">Reconocimiento de expresiones faciales en tiempo real desde la cámara web. Hecho junto a Juan Benavides.</p><ul class="tags"><li>Python</li><li>PyTorch</li><li>OpenCV</li></ul><p class="links"><a href="https://github.com/ChrisOnfroy/Emotians" data-i18n="code">Ver código</a></p></article>
     </div>
+  </div>
+</section>
+
+<section id="education" class="band">
+  <div class="wrap">
+    <h2 class="title" data-i18n="edu.title">Cómo me he formado.</h2>
+    <div class="cards">
+      <article class="tile"><p class="kicker" data-i18n="edu.d1">2026 – Actualidad</p><h3>Riwi</h3><p class="strong" data-i18n="edu.1">Especialización en Desarrollo Backend</p><p class="muted" data-i18n="edu.1d">Clean Architecture, ASP.NET Core, APIs empresariales, Entity Framework, SOLID, pruebas unitarias y Azure (Entra ID, App Services).</p></article>
+      <article class="tile"><p class="kicker" data-i18n="edu.d2">2025 – Actualidad</p><h3>Unisalamanca</h3><p class="strong" data-i18n="edu.2">Ingeniería de Sistemas</p></article>
+      <article class="tile"><p class="kicker" >2022 – 2025</p><h3>SENA</h3><p class="strong" data-i18n="edu.3">Tecnólogo en Análisis y Desarrollo de Software (ADSO)</p></article>
+    </div>
+    <h3 class="subtitle" data-i18n="cert.title">Certificaciones</h3>
+    <ul class="certs"><li><strong>SENA</strong><span data-i18n="cert.1">Tecnólogo en Análisis y Desarrollo de Software</span></li><li><strong>Globant</strong><span data-i18n="cert.2">Java: POO, estructuras de datos y buenas prácticas</span></li><li><strong>GitHub Bootcamp</strong><span data-i18n="cert.3">Flujo colaborativo, repositorios empresariales y Git avanzado</span></li></ul>
   </div>
 </section>
 
@@ -84,8 +108,20 @@ document.documentElement.dataset.theme=t})();
   <div class="portrait"><img src="assets/gesto.png" width="420" height="427" alt="Memoji de Cristian haciendo un corazón con los dedos" data-i18n-alt="alt.gesto" loading="lazy"></div>
   <div>
     <h2 class="title" data-i18n="nav.about">Sobre mí</h2>
-    <p data-i18n="about.1">Soy desarrollador Full Stack y estudiante de Ingeniería de Sistemas en Unisalamanca, con especialización en Backend en Riwi. Me gusta convertir requisitos complejos en software claro y bien estructurado.</p><p data-i18n="about.2">Trabajo con Clean Architecture y principios SOLID. Ahora estoy aprendiendo sobre Azure, pruebas y CI/CD. Fuera del código, soy fan del universo cinematográfico de Marvel.</p>
+    <p data-i18n="about.1">Soy desarrollador Full Stack y estudiante de Ingeniería de Sistemas en Unisalamanca, con especialización en Backend en Riwi. Me gusta convertir requisitos complejos en software claro y bien estructurado.</p><p data-i18n="about.2">Trabajo con Clean Architecture y principios SOLID. Ahora estoy aprendiendo sobre Azure, pruebas y CI/CD. Fuera del código, soy fan del universo cinematográfico de Marvel.</p><p class="strong" data-i18n="about.lang">Español nativo · Inglés intermedio</p>
   </div>
+</section>
+
+<section id="recommendations" class="wrap block recs">
+  <h2 class="title" data-i18n="rec.title">Recomendaciones.</h2>
+  <p class="lead" data-i18n="rec.lead">¿Hemos trabajado o estudiado juntos? Cuenta cómo fue la experiencia.</p>
+  <!-- Recomendaciones reales (con permiso de su autor). Copia este bloque fuera del comentario:
+  <div class="cards">
+    <figure class="tile"><blockquote>Texto de la recomendación</blockquote><figcaption><strong>Nombre</strong> · Cargo y relación contigo</figcaption></figure>
+  </div>
+  -->
+  <p class="actions"><a class="btn" href="mailto:cmoralesavendano6@gmail.com?subject=Recomendaci%C3%B3n%20%2F%20Recommendation" data-i18n="rec.mail">Enviar recomendación</a><a class="more" href="https://www.linkedin.com/in/cristian-alberto-morales-avenda%C3%B1o-a902b41b1/" data-i18n="rec.in">Ver mi LinkedIn</a></p>
+  <p class="hint" data-i18n="rec.note">Solo publicaré tu comentario y tu nombre con tu permiso.</p>
 </section>
 
 <section id="contact" class="contact">
