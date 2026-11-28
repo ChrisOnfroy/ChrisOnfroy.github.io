@@ -138,3 +138,12 @@ footer{padding-block:1.5rem;color:var(--muted);font-size:.8rem}
 @media (max-width:58rem){#education .cards{grid-template-columns:1fr}}
 /* Celular en horizontal: la barra no ocupa la pantalla al desplazarse */
 @media (max-height:30rem){.bar{position:static}html{scroll-padding-top:0}}
+
+/* Vistas por sección */
+main{display:flow-root;min-height:calc(100vh - 8rem);min-height:calc(100svh - 8rem)}
+.showcase{margin-top:0}
+.hero{padding-bottom:1rem}
+nav a[aria-current]{opacity:1;font-weight:600;color:var(--link)}
+nav{gap:1.1rem}
+@media (max-width:36rem){nav{grid-template-columns:repeat(3,auto);gap:0 .5rem}html{scroll-padding-top:0}}
+@media (max-width:36rem){nav a:nth-child(7){grid-column:span 2}}

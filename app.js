@@ -1,4 +1,5 @@
 const en = {
+  'nav.edu':'Education',
   'exp.title':'Where I have worked.',
   'exp.role':'Backend Developer (College Trainee)',
   'exp.place':'Corporate training environment, agile development · Barranquilla, Colombia',
@@ -25,7 +26,6 @@ const en = {
   'rec.lead':'Have we worked or studied together? Share how it went.',
   'rec.note':'I will only publish your comment and name with your permission.',
   'rec.mail':'Send a recommendation',
-  'rec.in':'View my LinkedIn',
   'p.classtrack':'Academic management web system that assigns classrooms and schedules, preventing overbooking and course clashes with transactional validation.',
   'about.lang':'Native Spanish · Intermediate English',
   'nav.exp':'Experience',
@@ -102,3 +102,21 @@ filterBtns.forEach(b => b.addEventListener('click', () => {
   });
   document.getElementById('count').textContent = (lang === 'es' ? 'Proyectos visibles: ' : 'Visible projects: ') + n;
 }));
+
+// Una sola sección a la vez: Inicio muestra solo la presentación
+const views = [...document.querySelectorAll('[data-view]')];
+const navLinks = [...document.querySelectorAll('nav a')];
+function showView() {
+  const id = location.hash.slice(1);
+  const view = views.some(s => s.dataset.view === id) ? id : 'top';
+  views.forEach(s => { s.hidden = s.dataset.view !== view; });
+  navLinks.forEach(a => {
+    if (a.hash === '#' + view) a.setAttribute('aria-current', 'page');
+    else a.removeAttribute('aria-current');
+  });
+  const toTop = () => window.scrollTo({ top: 0, behavior: 'instant' });
+  toTop(); requestAnimationFrame(toTop);
+}
+addEventListener('hashchange', showView);
+addEventListener('load', showView);
+showView();

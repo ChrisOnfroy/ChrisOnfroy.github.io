@@ -15,16 +15,18 @@ document.documentElement.dataset.theme=t})();
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 <header class="bar">
   <div class="bar-in">
     <a class="brand" href="#top"><img src="assets/sonrisa.png" width="28" height="28" alt="">Cristian Morales</a>
     <nav>
+      <a href="#top" data-i18n="nav.home">Inicio</a>
       <a href="#skills" data-i18n="nav.skills">Habilidades</a>
       <a href="#experience" data-i18n="nav.exp">Experiencia</a>
       <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+      <a href="#education" data-i18n="nav.edu">Formación</a>
       <a href="#about" data-i18n="nav.about">Sobre mí</a>
       <a href="#recommendations" data-i18n="nav.recs">Recomendaciones</a>
       <a href="#contact" data-i18n="nav.contact">Contacto</a>
@@ -34,7 +36,7 @@ document.documentElement.dataset.theme=t})();
 </header>
 <main id="top">
 
-<section class="hero wrap">
+<section class="hero wrap" data-view="top">
   <p class="eyebrow">Full Stack Developer</p>
   <h1><span data-i18n="hero.hi">Hola, soy</span> <span class="grad">Cristian.</span></h1>
   <p class="lead" data-i18n="hero.title">Del botón en React a la base de datos.</p>
@@ -42,7 +44,7 @@ document.documentElement.dataset.theme=t})();
   <div class="stage"><img src="assets/hola.png" width="420" height="420" alt="Memoji de Cristian saludando" data-i18n-alt="alt.hola"></div>
 </section>
 
-<section class="showcase">
+<section class="showcase" data-view="projects">
   <div class="wrap">
     <p class="eyebrow" data-i18n="show.eyebrow">Proyecto destacado</p>
     <h2>Firmeza.</h2>
@@ -54,7 +56,7 @@ document.documentElement.dataset.theme=t})();
   </div>
 </section>
 
-<section id="skills" class="wrap block">
+<section id="skills" data-view="skills" class="wrap block">
   <h2 class="title" data-i18n="skills.title">Lo que sé hacer.</h2>
   <div class="bento">
     <div class="tile wide"><p class="kicker">Backend</p><h3 data-i18n="skills.back">APIs claras y bien estructuradas.</h3><p class="muted">C#, Java, ASP.NET Core, EF Core, LINQ, JWT, Swagger / OpenAPI, xUnit</p></div>
@@ -65,7 +67,7 @@ document.documentElement.dataset.theme=t})();
   </div>
 </section>
 
-<section id="experience" class="wrap block">
+<section id="experience" data-view="experience" class="wrap block">
   <h2 class="title" data-i18n="exp.title">Dónde he trabajado.</h2>
   <div class="job">
     <div><h3 data-i18n="exp.role">Desarrollador Backend (College Trainee)</h3><p class="muted" data-i18n="exp.place">Entorno corporativo de práctica y desarrollo ágil · Barranquilla, Colombia</p><p class="date">2023 – 2025</p></div>
@@ -73,7 +75,7 @@ document.documentElement.dataset.theme=t})();
   </div>
 </section>
 
-<section id="projects" class="band">
+<section id="projects" data-view="projects" class="band">
   <div class="wrap">
     <h2 class="title" data-i18n="projects.title2">Lo que he construido.</h2>
     <p class="hint" data-i18n="filter.hint">Elige una tecnología para ver dónde la usé.</p>
@@ -91,7 +93,7 @@ document.documentElement.dataset.theme=t})();
   </div>
 </section>
 
-<section id="education" class="band">
+<section id="education" data-view="education" class="band">
   <div class="wrap">
     <h2 class="title" data-i18n="edu.title">Cómo me he formado.</h2>
     <div class="cards">
@@ -104,7 +106,7 @@ document.documentElement.dataset.theme=t})();
   </div>
 </section>
 
-<section id="about" class="wrap block about">
+<section id="about" data-view="about" class="wrap block about">
   <div class="portrait"><img src="assets/gesto.png" width="420" height="427" alt="Memoji de Cristian haciendo un corazón con los dedos" data-i18n-alt="alt.gesto" loading="lazy"></div>
   <div>
     <h2 class="title" data-i18n="nav.about">Sobre mí</h2>
@@ -112,7 +114,7 @@ document.documentElement.dataset.theme=t})();
   </div>
 </section>
 
-<section id="recommendations" class="wrap block recs">
+<section id="recommendations" data-view="recommendations" class="wrap block recs">
   <h2 class="title" data-i18n="rec.title">Recomendaciones.</h2>
   <p class="lead" data-i18n="rec.lead">¿Hemos trabajado o estudiado juntos? Cuenta cómo fue la experiencia.</p>
   <!-- Recomendaciones reales (con permiso de su autor). Copia este bloque fuera del comentario:
@@ -120,11 +122,11 @@ document.documentElement.dataset.theme=t})();
     <figure class="tile"><blockquote>Texto de la recomendación</blockquote><figcaption><strong>Nombre</strong> · Cargo y relación contigo</figcaption></figure>
   </div>
   -->
-  <p class="actions"><a class="btn" href="mailto:cmoralesavendano6@gmail.com?subject=Recomendaci%C3%B3n%20%2F%20Recommendation" data-i18n="rec.mail">Enviar recomendación</a><a class="more" href="https://www.linkedin.com/in/cristian-alberto-morales-avenda%C3%B1o-a902b41b1/" target="_blank" rel="noopener noreferrer" data-i18n="rec.in">Ver mi LinkedIn</a></p>
+  <p class="actions"><a class="btn" href="mailto:cmoralesavendano6@gmail.com?subject=Recomendaci%C3%B3n%20%2F%20Recommendation" data-i18n="rec.mail">Enviar recomendación</a></p>
   <p class="hint" data-i18n="rec.note">Solo publicaré tu comentario y tu nombre con tu permiso.</p>
 </section>
 
-<section id="contact" class="contact">
+<section id="contact" data-view="contact" class="contact">
   <div class="wrap">
     <img src="assets/gracias.png" width="420" height="420" alt="Memoji de Cristian haciendo un corazón con las manos" data-i18n-alt="alt.gracias" loading="lazy">
     <h2 data-i18n="contact.title">Hablemos.</h2>
@@ -135,6 +137,6 @@ document.documentElement.dataset.theme=t})();
 </section>
 </main>
 <footer class="wrap">© 2026 Cristian Morales</footer>
-<script src="app.js"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>
