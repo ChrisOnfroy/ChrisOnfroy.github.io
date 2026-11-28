@@ -15,7 +15,7 @@ document.documentElement.dataset.theme=t})();
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=31">
 </head>
 <body>
 <header class="bar">
@@ -23,12 +23,8 @@ document.documentElement.dataset.theme=t})();
     <a class="brand" href="#top"><img src="assets/sonrisa.png" width="28" height="28" alt="">Cristian Morales</a>
     <nav>
       <a href="#top" data-i18n="nav.home">Inicio</a>
-      <a href="#skills" data-i18n="nav.skills">Habilidades</a>
-      <a href="#experience" data-i18n="nav.exp">Experiencia</a>
-      <a href="#projects" data-i18n="nav.projects">Proyectos</a>
-      <a href="#education" data-i18n="nav.edu">Formación</a>
-      <a href="#about" data-i18n="nav.about">Sobre mí</a>
-      <a href="#contact" data-i18n="nav.contact">Contacto</a>
+      <a href="#skills" data-i18n="nav.tech">Tecnologías</a>
+      <a href="#experience" data-i18n="nav.exp">Trayectoria</a>
     </nav>
     <div class="controls"><button id="lang" type="button">EN</button><button id="theme" type="button"><span aria-hidden="true">☾</span></button></div>
   </div>
@@ -39,37 +35,75 @@ document.documentElement.dataset.theme=t})();
   <p class="eyebrow">Full Stack Developer</p>
   <h1><span data-i18n="hero.hi">Hola, soy</span> <span class="grad">Cristian.</span></h1>
   <p class="lead" data-i18n="hero.title">Del botón en React a la base de datos.</p>
-  <p class="actions"><a class="btn" href="#projects" data-i18n="hero.projects">Ver proyectos</a><a class="more" href="#contact" data-i18n="nav.hire">Contrátame</a></p>
+  <p class="actions"><a class="btn" href="#skills" data-i18n="hero.projects">Ver proyectos</a><a class="more" href="#contact" data-i18n="nav.hire">Contrátame</a></p>
   <div class="stage"><img src="assets/hola.png" width="420" height="420" alt="Memoji de Cristian saludando" data-i18n-alt="alt.hola"></div>
 </section>
 
-<section id="recommendations" data-view="top" class="wrap block recs">
-  <h2 class="title" data-i18n="rec.title">Recomendaciones.</h2>
-  <p class="lead" data-i18n="rec.lead">¿Hemos trabajado o estudiado juntos? Cuenta cómo fue la experiencia.</p>
-  <!-- Recomendaciones reales (con permiso de su autor). Copia este bloque fuera del comentario:
-  <div class="cards">
-    <figure class="tile"><blockquote>Texto de la recomendación</blockquote><figcaption><strong>Nombre</strong> · Cargo y relación contigo</figcaption></figure>
-  </div>
-  -->
-  <form id="rec-form" class="rec-form">
-    <label><span data-i18n="rec.name">Tu nombre</span><input name="name" required maxlength="80" autocomplete="name"></label>
-    <label><span data-i18n="rec.role">¿Cómo nos conocemos? (opcional)</span><input name="role" maxlength="120"></label>
-    <label><span data-i18n="rec.msg">Tu recomendación</span><textarea name="message" rows="5" required maxlength="1000"></textarea></label>
-    <p class="actions"><button class="btn" type="submit" data-i18n="rec.gmail">Continuar en Gmail</button><button class="plain" id="rec-copy" type="button" data-i18n="rec.copy">Copiar mensaje</button></p>
-    <p id="rec-status" class="hint" role="status"></p>
-  </form>
-  <p class="hint" data-i18n="rec.note">Solo publicaré tu comentario y tu nombre con tu permiso.</p>
-</section>
-
-<section class="showcase" data-view="projects">
-  <div class="wrap feature">
-    <p class="eyebrow" data-i18n="show.eyebrow">Proyecto destacado</p>
-    <h2>Firmeza.</h2>
-    <p class="lead" data-i18n="p.firmeza">Ventas e inventario con tienda para clientes: catálogo, carrito, control de existencias y comprobantes por correo. Incluye pruebas y Docker.</p>
-    <p class="actions"><a class="btn" href="https://github.com/ChrisOnfroy/FirmezaProyecto.Backend" target="_blank" rel="noopener noreferrer">Backend</a><a class="more" href="https://github.com/ChrisOnfroy/FirmezaProyecto.Frontend" target="_blank" rel="noopener noreferrer">Frontend</a></p>
-    <div class="flow"><span>React 19</span><i></i><span>API .NET 10</span><i></i><span>PostgreSQL</span></div>
-    <ul class="tags"><li>.NET 10</li><li>React 19</li><li>TypeScript</li><li>Tailwind CSS</li><li>PostgreSQL</li><li>Docker</li></ul>
-    <img class="peek" src="assets/laptop.png" width="420" height="420" alt="Memoji de Cristian programando en un portátil" data-i18n-alt="alt.laptop">
+<section class="showcase" data-view="skills">
+  <div class="wrap showcase-wrap">
+    <p class="eyebrow showcase-heading" data-i18n="show.eyebrow">Proyectos destacados</p>
+    <div class="feature-viewport" id="feature-viewport" tabindex="0" aria-label="Proyectos destacados" data-i18n-aria-label="carousel.label">
+      <article class="feature">
+        <h2>Firmeza.</h2><p class="lead" data-i18n="p.firmeza">Ventas e inventario con tienda para clientes: catálogo, carrito, control de existencias y comprobantes por correo. Incluye pruebas y Docker.</p>
+        <p class="actions"><a class="btn" href="https://github.com/ChrisOnfroy/FirmezaProyecto.Backend" target="_blank" rel="noopener noreferrer">Backend</a><a class="more" href="https://github.com/ChrisOnfroy/FirmezaProyecto.Frontend" target="_blank" rel="noopener noreferrer">Frontend</a></p>
+        <div class="flow"><span>React 19</span><i></i><span>API .NET 10</span><i></i><span>PostgreSQL</span></div>
+        <ul class="tags"><li>.NET 10</li><li>React 19</li><li>TypeScript</li><li>Tailwind CSS</li><li>PostgreSQL</li><li>Docker</li></ul>
+        <img class="peek" src="assets/laptop.png" width="420" height="420" alt="Memoji de Cristian programando en un portátil" data-i18n-alt="alt.laptop">
+      </article>
+      <article class="feature">
+        <h2>SkillHub.</h2><p class="lead" data-i18n="p.skillhub">Inscripciones a talleres presenciales: control de cupos, cruces de horario, inscripción masiva desde Excel y certificados en PDF.</p>
+        <p class="actions"><a class="btn" href="https://github.com/ChrisOnfroy/skillhub.Backend" target="_blank" rel="noopener noreferrer">Backend</a><a class="more" href="https://github.com/ChrisOnfroy/skillhub.Frontend" target="_blank" rel="noopener noreferrer">Frontend</a></p>
+        <div class="flow"><span>React</span><i></i><span>API .NET 10</span><i></i><span>PostgreSQL</span></div>
+        <ul class="tags"><li>.NET 10</li><li>React</li><li>TypeScript</li><li>DDD</li><li>PostgreSQL</li><li>Docker</li></ul>
+        <img class="peek" src="assets/laptop.png" width="420" height="420" alt="Memoji de Cristian programando en un portátil" data-i18n-alt="alt.laptop">
+      </article>
+      <article class="feature">
+        <h2>Proyectandtask.</h2><p class="lead" data-i18n="p.tasks">API para gestionar proyectos y tareas, donde cada usuario ve solo su trabajo. Tiene pruebas unitarias y de integración, y despliegue a Azure con GitHub Actions.</p>
+        <p class="actions"><a class="btn" href="https://github.com/ChrisOnfroy/ProyectoAndTarea.Backend" target="_blank" rel="noopener noreferrer" data-i18n="code">Ver código</a></p>
+        <div class="flow"><span>.NET 10</span><i></i><span>API REST</span><i></i><span>Azure</span></div>
+        <ul class="tags"><li>.NET 10</li><li>PostgreSQL</li><li>xUnit</li><li>Azure</li><li>GitHub Actions</li></ul>
+        <img class="peek" src="assets/laptop.png" width="420" height="420" alt="Memoji de Cristian programando en un portátil" data-i18n-alt="alt.laptop">
+      </article>
+      <article class="feature">
+        <h2>Canchero.</h2><p class="lead" data-i18n="p.canchero">API para buscar canchas, administrar sedes y gestionar reservas, con roles y búsqueda por ubicación.</p>
+        <p class="actions"><a class="btn" href="https://github.com/ChrisOnfroy/Canchero.Backend" target="_blank" rel="noopener noreferrer" data-i18n="code">Ver código</a></p>
+        <div class="flow"><span>.NET 10</span><i></i><span>EF Core</span><i></i><span>PostgreSQL</span></div>
+        <ul class="tags"><li>.NET 10</li><li>EF Core</li><li>PostgreSQL</li></ul>
+        <img class="peek" src="assets/laptop.png" width="420" height="420" alt="Memoji de Cristian programando en un portátil" data-i18n-alt="alt.laptop">
+      </article>
+      <article class="feature">
+        <h2>TaskApi.</h2><p class="lead" data-i18n="p.taskapi">API de tareas diseñada para Azure App Service y Azure SQL con identidad administrada.</p>
+        <p class="actions"><a class="btn" href="https://github.com/ChrisOnfroy/TaskApi.Backend" target="_blank" rel="noopener noreferrer" data-i18n="code">Ver código</a></p>
+        <div class="flow"><span>.NET 10</span><i></i><span>Azure App Service</span><i></i><span>Azure SQL</span></div>
+        <ul class="tags"><li>.NET 10</li><li>Azure SQL</li><li>PostgreSQL</li><li>Docker</li></ul>
+        <img class="peek" src="assets/laptop.png" width="420" height="420" alt="Memoji de Cristian programando en un portátil" data-i18n-alt="alt.laptop">
+      </article>
+      <article class="feature">
+        <h2>ClassTrack.</h2><p class="lead" data-i18n="p.classtrack">Sistema web de gestión académica para asignar aulas y horarios, evitando sobrecupos y cruces de asignaturas con validaciones transaccionales.</p>
+        <div class="flow"><span>JavaScript</span><i></i><span>Gestión académica</span><i></i><span>MySQL</span></div>
+        <ul class="tags"><li>JavaScript</li><li>MySQL</li><li>Git</li></ul>
+        <img class="peek" src="assets/laptop.png" width="420" height="420" alt="Memoji de Cristian programando en un portátil" data-i18n-alt="alt.laptop">
+      </article>
+      <article class="feature">
+        <h2>Emotians.</h2><p class="lead" data-i18n="p.emotians">Reconocimiento de expresiones faciales en tiempo real desde la cámara web. Hecho junto a Juan Benavides.</p>
+        <p class="actions"><a class="btn" href="https://github.com/ChrisOnfroy/Emotians" target="_blank" rel="noopener noreferrer" data-i18n="code">Ver código</a></p>
+        <div class="flow"><span>Python</span><i></i><span>PyTorch</span><i></i><span>OpenCV</span></div>
+        <ul class="tags"><li>Python</li><li>PyTorch</li><li>OpenCV</li></ul>
+        <img class="peek" src="assets/laptop.png" width="420" height="420" alt="Memoji de Cristian programando en un portátil" data-i18n-alt="alt.laptop">
+      </article>
+    </div>
+    <div class="carousel-controls">
+      <div class="carousel-dots" role="group" aria-label="Elegir proyecto" data-i18n-aria-label="carousel.choose">
+        <button type="button" class="carousel-dot is-active" data-carousel-dot="0" aria-label="Proyecto 1" aria-current="true"></button>
+        <button type="button" class="carousel-dot" data-carousel-dot="1" aria-label="Proyecto 2"></button>
+        <button type="button" class="carousel-dot" data-carousel-dot="2" aria-label="Proyecto 3"></button>
+        <button type="button" class="carousel-dot" data-carousel-dot="3" aria-label="Proyecto 4"></button>
+        <button type="button" class="carousel-dot" data-carousel-dot="4" aria-label="Proyecto 5"></button>
+        <button type="button" class="carousel-dot" data-carousel-dot="5" aria-label="Proyecto 6"></button>
+        <button type="button" class="carousel-dot" data-carousel-dot="6" aria-label="Proyecto 7"></button>
+      </div>
+      <span id="carousel-status" class="sr" role="status" aria-live="polite"></span>
+    </div>
   </div>
 </section>
 
@@ -92,7 +126,7 @@ document.documentElement.dataset.theme=t})();
   </div>
 </section>
 
-<section id="projects" data-view="projects" class="band">
+<section id="projects" data-view="skills" class="band">
   <div class="wrap">
     <h2 class="title" data-i18n="projects.title2">Lo que he construido.</h2>
     <p class="hint" data-i18n="filter.hint">Elige una tecnología para ver dónde la usé.</p>
@@ -110,7 +144,7 @@ document.documentElement.dataset.theme=t})();
   </div>
 </section>
 
-<section id="education" data-view="education" class="band">
+<section id="education" data-view="experience" class="band">
   <div class="wrap">
     <h2 class="title" data-i18n="edu.title">Cómo me he formado.</h2>
     <div class="cards">
@@ -123,7 +157,7 @@ document.documentElement.dataset.theme=t})();
   </div>
 </section>
 
-<section id="about" data-view="about" class="wrap block about">
+<section id="about" data-view="top" class="wrap block about">
   <div class="portrait"><img src="assets/gesto.png" width="420" height="427" alt="Memoji de Cristian haciendo un corazón con los dedos" data-i18n-alt="alt.gesto" loading="lazy"></div>
   <div>
     <h2 class="title" data-i18n="nav.about">Sobre mí</h2>
@@ -131,7 +165,7 @@ document.documentElement.dataset.theme=t})();
   </div>
 </section>
 
-<section id="contact" data-view="contact" class="contact">
+<section id="contact" data-view="top" class="contact">
   <div class="wrap">
     <img src="assets/gracias.png" width="420" height="420" alt="Memoji de Cristian haciendo un corazón con las manos" data-i18n-alt="alt.gracias" loading="lazy">
     <h2 data-i18n="contact.title">Hablemos.</h2>
@@ -140,8 +174,31 @@ document.documentElement.dataset.theme=t})();
     <p class="mail">cmoralesavendano6@gmail.com</p>
   </div>
 </section>
+
+<section id="feedback" data-view="top" class="wrap block feedback">
+  <h2 class="title" data-i18n="feedback.title">Feedback.</h2>
+  <p class="lead" data-i18n="feedback.lead">Comparte tu experiencia. Al enviarlo, será visible para todos.</p>
+  <div id="feedback-list" class="feedback-list" aria-live="polite"></div>
+  <button id="feedback-open" class="btn feedback-open" type="button" data-i18n="feedback.open">Dejar comentario</button>
+  <dialog id="feedback-dialog" class="feedback-island" aria-labelledby="feedback-dialog-title">
+    <div class="feedback-island-head">
+      <h3 id="feedback-dialog-title" data-i18n="feedback.formTitle">Deja tu comentario</h3>
+      <button class="feedback-close" type="button" data-i18n-aria-label="feedback.close"><span aria-hidden="true">×</span></button>
+    </div>
+    <form id="feedback-form" class="feedback-form">
+      <label><span data-i18n="feedback.name">Tu nombre</span><input name="name" required maxlength="80" autocomplete="name"></label>
+      <label><span data-i18n="feedback.role">Contexto (opcional)</span><input name="relationship" maxlength="120"></label>
+      <label><span data-i18n="feedback.msg">Tu feedback</span><textarea name="message" rows="5" required maxlength="1000"></textarea></label>
+      <label class="feedback-consent"><input name="public" type="checkbox" required><span data-i18n="feedback.public">Entiendo que mi nombre y feedback se publicarán inmediatamente.</span></label>
+      <p class="actions"><button class="btn" type="submit" data-i18n="feedback.submit">Publicar feedback</button></p>
+      <p id="feedback-status" class="hint" role="status"></p>
+    </form>
+  </dialog>
+</section>
+
 </main>
 <footer class="wrap">© 2026 Cristian Morales</footer>
-<script src="app.js?v=5"></script>
+<script src="feedback-config.js?v=1"></script>
+<script src="app.js?v=14"></script>
 </body>
 </html>
